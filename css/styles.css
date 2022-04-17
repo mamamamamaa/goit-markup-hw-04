@@ -141,7 +141,7 @@ h1,h2,h3,h4,h5,h5,p,ul{
 /* ------- HERO--------- */
 
 .hero{
-    width: auto;
+    max-width: 1600px;
     min-height: 600px;
     background-color: var(--backgroung-color);
     background-image: linear-gradient(
@@ -154,6 +154,8 @@ h1,h2,h3,h4,h5,h5,p,ul{
 
     padding-top: 200px;
     padding-bottom: 200px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 
@@ -218,11 +220,6 @@ h1,h2,h3,h4,h5,h5,p,ul{
     height: 120px;
     margin-bottom: 30px;
     border-radius: 4px;
-}
-
-.qualities-icons{
-    width: 70px;
-    height: 70px;
 }
 
 .qualities-list-item:not(:last-child){
@@ -296,6 +293,7 @@ h1,h2,h3,h4,h5,h5,p,ul{
     justify-content: center;
     align-items: center;
     list-style: none;
+    margin-top: 16px;
 }
 
 .icon-link{
@@ -305,13 +303,10 @@ h1,h2,h3,h4,h5,h5,p,ul{
     width: 44px;
     height: 44px;
     border-radius: 50%;
-    margin-top: 16px;
-        background-color: rgba(255, 255, 255, 0.1);
+    background-color: rgba(255, 255, 255, 0.1);
 }
 
 .team-icons{
-    width: 20px;
-    height: 20px;
     fill: #AFB1B8;
 }
 
@@ -341,10 +336,6 @@ h1,h2,h3,h4,h5,h5,p,ul{
 }
 
 /* ------- REGULAR CUSTOMERS--------- */
-.company-icon{
-    width: 106px;
-    height: 60px;
-}
 
 .reg-cust-list{
     display: flex;
@@ -473,13 +464,16 @@ h1,h2,h3,h4,h5,h5,p,ul{
 
 .filter-list-btn{
     font-family: 'Roboto';
-    font-weight: 500;
     background-color: var(--portfolio-btns);
-    cursor: pointer;
+    
+    font-weight: 500;
+    line-height: 1.62;    
+    letter-spacing: 0.03em;
 
     border-radius: 4px;
     border: transparent;
     padding: 6px 22px;
+    cursor: pointer;
 }
 
 .filter-list-btn:hover, .filter-list-btn:focus {
@@ -521,18 +515,24 @@ h1,h2,h3,h4,h5,h5,p,ul{
     margin-bottom: 30px;
 }
 
-.product-list-item:hover{
+.product-list-link{
+    display: block;
+    text-decoration: none;
+}
+
+.product-list-link:hover, .product-list-link:focus{
     box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12),
     0px 4px 4px rgba(0, 0, 0, 0.06),
     1px 4px 6px rgba(0, 0, 0, 0.16);
 }
 
 .product-list-header{
+    color: var(--header-color);
     font-weight: 700;
     font-size: 18px;
     line-height: 2;
     letter-spacing: 0.06em;
-
+    text-decoration: none;
     margin-bottom: 4px;
 }
 
