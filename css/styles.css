@@ -94,24 +94,46 @@ h1,h2,h3,h4,h5,h5,p,ul{
 .address-list{
     display: flex;
     margin-left: auto;
+    max-height: 80px;
 }
 
 .address-list-item{
+    display: flex;
+    align-items: center;
+}
+
+.address-list-link{
+    display: flex;
+    align-items: center;
+
     font-weight: 500;
     font-size: 14px;
     line-height: 1.14;
     letter-spacing: 0.02em;
     text-decoration: none;
     color: var(--paragraph-color);
+    margin-top: auto;
+    margin-bottom: auto;
 }
 
 .address-list-item:not(:last-child){
     margin-right: 50px;
 }
 
-.header-list-link:hover, .address-list-item:hover, .header-list-link:focus,
-.address-list-itemk:focus{
+.header-list-link:hover, .address-list-link:hover, .header-list-link:focus,
+.address-list-link:focus{
     color: var(--accent-color);
+}
+
+.header-icons{
+    display: block;
+    max-height: 80px;
+    margin-right: 10px;
+    fill: #757575;
+}
+
+.address-list-link:hover .header-icons, .address-list-link:focus .header-icons{
+    fill: var(--accent-color);
 }
 
 /* --------------- MAIN------------------ */
@@ -120,12 +142,20 @@ h1,h2,h3,h4,h5,h5,p,ul{
 
 .hero{
     width: auto;
+    min-height: 600px;
     background-color: var(--backgroung-color);
+    background-image: linear-gradient(
+        rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)
+        ), url(../images/bg-image.jpg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
     text-align: center;
 
     padding-top: 200px;
     padding-bottom: 200px;
 }
+
 
 .hero-header{
     font-weight: 900;
@@ -180,8 +210,23 @@ h1,h2,h3,h4,h5,h5,p,ul{
     display: flex;
 }
 
-.qualities-list-item{
-    width: calc((100% - 90px) / 4);
+.icons-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #F5F4FA;
+    height: 120px;
+    margin-bottom: 30px;
+    border-radius: 4px;
+}
+
+.qualities-icons{
+    width: 70px;
+    height: 70px;
+}
+
+.qualities-list-item:not(:last-child){
+    margin-right: 30px;
 }
 
 .qualities-list-header{
@@ -234,7 +279,7 @@ h1,h2,h3,h4,h5,h5,p,ul{
 }
 
 .team-list-item{
-    background-color: #fff;
+    background-color: var(--contrast-color);
     box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12),
     0px 1px 1px rgba(0, 0, 0, 0.14),
     0px 2px 1px rgba(0, 0, 0, 0.2);
@@ -244,6 +289,38 @@ h1,h2,h3,h4,h5,h5,p,ul{
 .team-container{
     padding-top: 30px;
     padding-bottom: 30px;
+}
+
+.team-icon-list{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    list-style: none;
+}
+
+.icon-link{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    margin-top: 16px;
+        background-color: rgba(255, 255, 255, 0.1);
+}
+
+.team-icons{
+    width: 20px;
+    height: 20px;
+    fill: #AFB1B8;
+}
+
+.icon-link:hover, .icon-link:focus{
+    background-color: var(--accent-color);   
+}
+
+.icon-link:hover .team-icons, .icon-link:focus .team-icons {
+    fill: var(--contrast-color);
 }
 
 .team-list-header{
@@ -261,6 +338,41 @@ h1,h2,h3,h4,h5,h5,p,ul{
     text-align: center;
     letter-spacing: 0.03em;
     color: var(--paragraph-color);
+}
+
+/* ------- REGULAR CUSTOMERS--------- */
+.company-icon{
+    width: 106px;
+    height: 60px;
+}
+
+.reg-cust-list{
+    display: flex;
+    list-style: none;
+    justify-content: center;
+    align-items: center;
+}
+
+.customer-link{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 170px;
+    height: 92px;
+    border: 1px #AFB1B8 solid;
+    border-radius: 4px;
+    fill: #AFB1B8;
+}
+
+.customer-link:hover{
+    fill: var(--accent-color);
+    border-color: var(--accent-color);
+}
+
+.list-item:not(:last-child) {
+    margin-right: 30px;
+    
 }
 
 /* --------------- FOOTER------------------ */
@@ -310,6 +422,30 @@ h1,h2,h3,h4,h5,h5,p,ul{
 
 .footer-logo-item {
     color: var(--accent-color);
+}
+
+.social-header{
+    text-transform: uppercase;
+    color: var(--contrast-color);
+}
+
+.footer-container{
+    display: flex;
+}
+
+.social-link-container{
+    margin-left: 70px;
+    margin-top: 12px;
+}
+
+.social-icons{
+    width: 20px;
+    height: 20px;
+    fill: var(--contrast-color);
+}
+
+.icon-item:not(:last-child){
+    margin-right: 10px;
 }
 
 /* ------------------------------- PORTFOLIO-------------------------------------- */
@@ -374,8 +510,18 @@ h1,h2,h3,h4,h5,h5,p,ul{
     margin-right: 30px;
 }
 
-.product-list-item:nth-last-child(n+3){
+.product-list-item:nth-last-child(n+2){
     margin-bottom: 30px;
+}
+
+.product-list-item:last-child{
+    margin-bottom: 30px;
+}
+
+.product-list-item:hover{
+    box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12),
+    0px 4px 4px rgba(0, 0, 0, 0.06),
+    1px 4px 6px rgba(0, 0, 0, 0.16);
 }
 
 .product-list-header{
